@@ -12,7 +12,7 @@ if ENV=='dev':
     app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://root:qt123123...@localhost/autocomplete'
 else:
     app.debug=False
-    app.config['SQLALCHEMY_DATABASE_URI']='mysql+pymysql://bad31ca552b4e5:24402813@us-cdbr-east-02.cleardb.com/heroku_5968cd3c50ec929'
+    app.config['SQLALCHEMY_DATABASE_URI']='mysql://bad31ca552b4e5:24402813@us-cdbr-east-02.cleardb.com/heroku_5968cd3c50ec929'
 
 app.config['SQLALCHMY_TRACK_MODIFICATIONS']=False
 
