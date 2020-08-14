@@ -17,16 +17,13 @@
       <h2>Type Word Here</h2>
       <p>only 2-Gram was implemented</p>
       {{form.output(class="form-control")}}
-      <!--
-      <button type="submit" class="btn btn-info">Submit<span class="ui-icon ui-icon-gear"></span></button>
-    -->
     </div>
  </form>
 
  <script>
  jQuery.fn.center = function () {
     this.css("position","absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight())/5) +
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight())/3) +
                                                 $(window).scrollTop()) + "px");
     this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth())/2) +
                                                 $(window).scrollLeft()) + "px");
