@@ -9,22 +9,26 @@
 </head>
 <body>
   <h1 style="text-align:center">MapReduce Project - AutoComplete - Zhao Chen</h1>
+  <!--
   <img src="{{ url_for('static',filename='process.jpeg') }}" width='50%' align="middle"/>
+-->
   <form class="form-inline">
     <div class="form-group">
       <h2>Type Word Here</h2>
       <p>only 2-Gram was implemented</p>
       {{form.output(class="form-control")}}
+      <!--
       <button type="submit" class="btn btn-info">Submit<span class="ui-icon ui-icon-gear"></span></button>
+    -->
     </div>
-    <div id="result" style="text-align:center"></div>
  </form>
+
  <script>
  jQuery.fn.center = function () {
     this.css("position","absolute");
-    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight())/5) +
                                                 $(window).scrollTop()) + "px");
-    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth())/1.5) +
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth())/2) +
                                                 $(window).scrollLeft()) + "px");
     return this;
 }
@@ -42,25 +46,6 @@ $(document).ready(function(){
 
  $('#output').autocomplete({
   source: output,
- });
-
- $('form').on('submit', function(e){
-  $.ajax({
-   data: {
-    output:$('#output').val()
-   },
-   type: 'POST',
-   url : '/process'
-  })
-  .done(function(data){
-   if (data.error){
-    $('#result').text(data.error).show();
-   }
-   else {
-    $('#result').html(data.output).show()
-   }
-  })
-  e.preventDefault();
  });
 });
 </script>

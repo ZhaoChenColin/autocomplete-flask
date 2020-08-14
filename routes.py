@@ -21,7 +21,7 @@ def index():
     form=SearchForm(request.form)
     return render_template('index.html', form=form)
 
-@app.route('/output')
+@app.route('/output',methods=['GET'])
 def outputdic():
     res = Output.query.order_by(Output.count.desc())
     list_output = [r.as_dict() for r in res]
